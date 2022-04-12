@@ -1,5 +1,4 @@
 const router = require('express').Router()
-const { readFile, writeFile } = require('fs')
 const { join } = require('path')
 
 //Get the notes.html

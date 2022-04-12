@@ -1,7 +1,6 @@
 const express = require('express')
-const { rmSync } = require('fs')
 const { join } = require('path')
-const notes = require('./db/db.json')
+
 
 const app = express ()
 
