@@ -18,16 +18,19 @@ router.post('/notes', (req, res) => {
   }
 
   notes.push(newNote)
-  res.json(200)
+  fs.writeFile(join(__dirname, 'db', 'db.json'), JSON.stringify(notes), err => {
+    if (err) { console.log(err) }
+    res.json(newNote)
+  })
 })
 
 router.delete('/notes/:id', (req, res) => {
   notes = notes.filter(note => note.id !== req.params.id)
-  res.json(notes)
+  fs.writeFile(join(__dirname, 'db', 'db.json'), JSON.stringify(notes), err => {
+    if (err) { console.log(err) }
+    res.sendStatus(200)
+  })
 })
-
-
-
 
 
 module.exports = router
