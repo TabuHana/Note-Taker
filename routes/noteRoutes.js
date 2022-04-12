@@ -11,16 +11,16 @@ router.get('/notes', (req, res) => {
 })
 
 router.post('/notes', (req, res) => {
-  let newNote = {
+  let noteData = {
     title: req.body.title,
     text: req.body.text,
     id: uid()
   }
 
-  notes.push(newNote)
+  notes.push(noteData)
   fs.writeFile(join(__dirname,'..', 'db', 'db.json'), JSON.stringify(notes), err => {
     if (err) { console.log(err) }
-    res.json(newNote)
+    res.json(noteData)
   })
 })
 
