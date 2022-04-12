@@ -1,4 +1,4 @@
-# Note Taker App
+# Note Taker App(https://note-taker-tabu.herokuapp.com/)
 
   ![license](https://img.shields.io/badge/license-MIT-blue)
 
@@ -19,7 +19,7 @@
 
   ***
   ## Technologies Used
-  
+  Used uid to create unique note ids, npm, node, and fs
 
   ***
   ## Visual Presentation
@@ -43,5 +43,6 @@
 
   ***
   ## Additional Info
+  - Deployment: NoteTaker(https://note-taker-tabu.herokuapp.com/)
   - Github: TabuHana(https://github.com/TabuHana)
   - Email: nate31196@outlook.com
