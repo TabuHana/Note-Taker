@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { readFile, writeFile } = require('fs')
+const fs = require('fs')
 const { join, parse } = require('path')
 const { uid } = require('uid')
 
@@ -18,7 +18,7 @@ router.post('/notes', (req, res) => {
   }
 
   notes.push(newNote)
-  fs.writeFile(join(__dirname, 'db', 'db.json'), JSON.stringify(notes), err => {
+  fs.writeFile(join(__dirname,'..', 'db', 'db.json'), JSON.stringify(notes), err => {
     if (err) { console.log(err) }
     res.json(newNote)
   })
@@ -26,7 +26,7 @@ router.post('/notes', (req, res) => {
 
 router.delete('/notes/:id', (req, res) => {
   notes = notes.filter(note => note.id !== req.params.id)
-  fs.writeFile(join(__dirname, 'db', 'db.json'), JSON.stringify(notes), err => {
+  fs.writeFile(join(__dirname,'..', 'db', 'db.json'), JSON.stringify(notes), err => {
     if (err) { console.log(err) }
     res.sendStatus(200)
   })
